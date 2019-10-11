@@ -45,12 +45,14 @@ public class HomeController {
     @RequestMapping("/detail/{id}")
     public String detailCar(@PathVariable("id") long idDetail, Model model){
         model.addAttribute("car", carsRepository.findById(idDetail).get());
+
         return "detail";
     }
 
     @RequestMapping("/update/{id}")
     public String updateCar(@PathVariable("id") long idUpdate, Model model){
         model.addAttribute("car", carsRepository.findById(idUpdate));
+        model.addAttribute("categories", categoryRepository.findById(idUpdate));
         return "carForm";
     }
 
