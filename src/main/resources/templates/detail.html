@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <header th:insert="base :: header"></header>
+    <style>
+        body {
+            background: url("https://res.cloudinary.com/drpyvuhac/image/upload/v1569530630/fall-1072821_1920_0_oryogc.jpg");
+            background-size: cover;
+        }
+
+        .jumbotron {
+            background-color: rgba(255 255 255 0.6);
+        }
+
+    </style>
+</head>
+<body>
+<nav th:replace="base :: navlinks"></nav>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Student Sign Up</h1>
+
+    </div>
+</div>
+
+<footer th:insert="base :: footer"></footer>
+<div th:insert="base :: scripts"></div>
+</body>
+</html>
