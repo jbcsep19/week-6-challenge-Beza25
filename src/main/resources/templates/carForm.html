@@ -3,11 +3,7 @@
 <head>
     <header th:insert="base :: header"></header>
     <style>
-        body {
-            background: url("https://res.cloudinary.com/drpyvuhac/image/upload/v1569530630/fall-1072821_1920_0_oryogc.jpg");
-            background-size: cover;
-        }
-
+        
         .jumbotron {
             background-color: rgba(255 255 255 0.6);
         }
@@ -18,34 +14,7 @@
 <nav th:replace="base :: navlinks"></nav>
 <div class="container">
     <div class="jumbotron">
-        <h1 class="display-4">Car Form</h1>
-        <form th:action="@{/process_student}" th:object="${student}" method = "post">
-            <input type="hidden" th:field="*{studentId}"/>
-            <div class="form-row">
-                <div class="col">
-                    <label >FirstName</label>
-                    <input type="text" th:field="*{firstName}"  class="form-control" placeholder="First Name"/>
-                    <span th:if="${#fields.hasErrors('firstName')}"
-                          th:errors="*{firstName}"></span>
-                </div>
-                <div class="col">
-                    <label>Last Name</label>
-                    <input type="text" th:field="*{lastName}" class="form-control" placeholder="Last Name"/>
-                    <span th:if="${#fields.hasErrors('lastName')}"
-                          th:errors="*{lastName}"></span>
-                    <br/>
-                </div>
-            </div>
-            <div class="form-row">
-                <label >Major</label>
-                <input type="text" th:field="*{major}"  class="form-control" placeholder="Major"/>
-                <span th:if="${#fields.hasErrors('major')}"
-                      th:errors="*{major}"></span>
-            </div>
-            <br/><br/>
-
-            <button type="submit" class="btn btn-success"> Home </button>
-        </form>
+        <h1 class="display-4">Student Sign Up</h1>
 
     </div>
 </div>
