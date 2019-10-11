@@ -32,13 +32,12 @@
                     <input type="text" th:field="*{color}" class="form-control" placeholder="Color">
                 </div>
                 <div class="col">
-                    <select  name = "category" th:field="*{category}" class="form-control">
-<!--        id="inputState"                 <option selected>Choose...</option>-->
+                    <select  name = "category" th:field="*{category}">
                         <option th:each="category : ${categories}"
                                 th:value="${category.categoryID}"
-                                th:text="${category.type}">Choose...
-                        </option>
+                                th:text="${category.type}"></option>
                     </select>
+
                 </div>
             </div>
             <br/>

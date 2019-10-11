@@ -26,7 +26,7 @@ public class HomeController {
         return "carForm";
     }
     @PostMapping("/process_car")
-    public String processCar(@RequestParam(name="category")@ModelAttribute  Cars cars ){
+    public String processCar(@ModelAttribute  Cars cars ){
         carsRepository.save(cars);
         return "redirect:/";
     }
@@ -41,6 +41,25 @@ public class HomeController {
         categoryRepository.save(category);
         return "redirect:/";
     }
+
+    @RequestMapping("/detail/{id}")
+    public String detailCar(@PathVariable("id") long idDetail, Model model){
+        model.addAttribute("car", carsRepository.findById(idDetail).get());
+        return "detail";
+    }
+
+    @RequestMapping("/update/{id}")
+    public String updateCar(@PathVariable("id") long idUpdate, Model model){
+        model.addAttribute("car", carsRepository.findById(idUpdate));
+        return "carForm";
+    }
+
+    @RequestMapping("/delete/{id}")
+    public String deleteCar(@PathVariable("id") long idDelete){
+       carsRepository.deleteById(idDelete);
+       return "redirect:/";
+    }
+
 
 
 
