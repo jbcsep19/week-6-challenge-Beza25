@@ -9,7 +9,7 @@ public class Cars {
     private long carsID;
 
     private String make;
-    private int year;
+    private String year;
     private String color;
 
     @ManyToOne()
@@ -27,21 +27,8 @@ public class Cars {
         this.carsID = carsID;
     }
 
-    public String getMake() {
-        return make;
-    }
 
-    private void setMake(String model) {
-        this.make = make;
-    }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
 
     public String getColor() {
         return color;
@@ -58,5 +45,21 @@ public class Cars {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
     }
 }

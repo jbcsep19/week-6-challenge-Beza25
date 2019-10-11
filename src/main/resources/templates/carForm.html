@@ -3,7 +3,7 @@
 <head>
     <header th:insert="base :: header"></header>
     <style>
-        
+
         .jumbotron {
             background-color: rgba(255 255 255 0.6);
         }
@@ -14,7 +14,37 @@
 <nav th:replace="base :: navlinks"></nav>
 <div class="container">
     <div class="jumbotron">
-        <h1 class="display-4">Student Sign Up</h1>
+        <h1 class="display-4"> Add Your Favorite Car</h1>
+        <br/>
+        <form action="#" th:action="@{/process_car}" th:object="${car}" method="post">
+            <input type="hidden" th:field="*{carsID}">
+            <div class="row">
+                <div class="col">
+                    <input type="text" th:field="*{make}" class="form-control" placeholder="Make">
+                </div>
+                <div class="col">
+                    <input type="text" th:field="*{year}" class="form-control" placeholder="Year">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" th:field="*{color}" class="form-control" placeholder="Color">
+                </div>
+                <div class="col">
+                    <select  id="inputState" name = "category" th:field="*{category}" class="form-control">
+<!--                        <option selected>Choose...</option>-->
+                        <option th:each="category : ${categories}"
+                                th:value="${category.categoryID}"
+                                th:text="${category.type}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Add Car</button>
+        </form>
+
+
 
     </div>
 </div>
