@@ -8,12 +8,12 @@ public class Cars {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long carsID;
 
-    private String model;
+    private String make;
     private int year;
     private String color;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Cars cars;
+    @ManyToOne()
+    private Category category;
 
     public Cars() {
     }
@@ -27,12 +27,12 @@ public class Cars {
         this.carsID = carsID;
     }
 
-    public String getModel() {
-        return model;
+    public String getMake() {
+        return make;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    private void setMake(String model) {
+        this.make = make;
     }
 
     public int getYear() {
@@ -51,11 +51,12 @@ public class Cars {
         this.color = color;
     }
 
-    public Cars getCars() {
-        return cars;
+
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCars(Cars cars) {
-        this.cars = cars;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
