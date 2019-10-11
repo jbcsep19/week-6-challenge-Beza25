@@ -26,16 +26,17 @@
                     <input type="text" th:field="*{year}" class="form-control" placeholder="Year">
                 </div>
             </div>
+            <br/>
             <div class="row">
                 <div class="col">
                     <input type="text" th:field="*{color}" class="form-control" placeholder="Color">
                 </div>
                 <div class="col">
-                    <select  id="inputState" name = "category" th:field="*{category}" class="form-control">
-<!--                        <option selected>Choose...</option>-->
+                    <select  name = "category" th:field="*{category}" class="form-control">
+<!--        id="inputState"                 <option selected>Choose...</option>-->
                         <option th:each="category : ${categories}"
                                 th:value="${category.categoryID}"
-                                th:text="${category.type}">
+                                th:text="${category.type}">Choose...
                         </option>
                     </select>
                 </div>

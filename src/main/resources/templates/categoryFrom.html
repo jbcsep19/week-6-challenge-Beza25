@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <header th:insert="base :: header"></header>
+    <style>
+
+        .jumbotron {
+            background-color: rgba(255 255 255 0.6);
+        }
+
+    </style>
+</head>
+<body>
+<nav th:replace="base :: navlinks"></nav>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">The type of Car</h1>
+        <br/>
+        <form  th:action="@{/process_category}" th:object="${category}" method="post">
+            <input type="hidden" th:field="*{categoryID}" />
+            <div class="row">
+                <input type="text" th:field="*{type}" class="form-control" placeholder="Category: example (Track, SUV, Sedan...)">
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Add Category</button>
+        </form>
+
+    </div>
+</div>
+
+<footer th:insert="base :: footer"></footer>
+<div th:insert="base :: scripts"></div>
+</body>
+</html>
